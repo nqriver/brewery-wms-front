@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import {Button, Form, Alert, Table} from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import {Alert, Button, Form, Table} from 'react-bootstrap';
 import {useParams} from 'react-router-dom';
 import {
-    useBreweryDetails,
     addBeerToBrewery,
     editBrewery,
-    getBeers, finishBeerProduction
+    finishBeerProduction,
+    getBeers,
+    useBreweryDetails
 } from '../services/breweryService';
 import '../styles/BreweryManagement.css'
 

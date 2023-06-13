@@ -5,7 +5,7 @@ import axios from 'axios';
 const api = axios.create({
     baseURL: 'http://localhost:8080',
     timeout: 1000,
-    headers: { 'Content-Type': 'application/json' }
+    headers: {'Content-Type': 'application/json'}
 });
 
 // Mapa kodów błędów
@@ -18,7 +18,7 @@ const errorCodes = {
     "BMS06": "Ten browar nie jest zarządzany przez wybranego menadżera",
     "BM07": "Nie można znaleźć stylu piwa",
     "BM08": "Nie można znaleźć piwa",
-    "BMS09" : "To piwo jest już produkowane przez ten browar"
+    "BMS09": "To piwo jest już produkowane przez ten browar"
 };
 
 api.interceptors.request.use((config) => {

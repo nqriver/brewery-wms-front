@@ -1,9 +1,9 @@
 // Logout.js
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { logout } from '../services/authService';
+import {useEffect} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {logout} from '../services/authService';
 
-const Logout = ({ onLogout }) => {
+const Logout = ({onLogout}) => {
     const navigate = useNavigate();
 
     useEffect(() => {

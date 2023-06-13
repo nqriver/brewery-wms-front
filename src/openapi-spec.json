@@ -1,124 +1,142 @@
 {
-  "openapi" : "3.0.3",
-  "info" : {
-    "title" : "brewery-wms API",
-    "version" : "1.0-SNAPSHOT"
+  "openapi": "3.0.3",
+  "info": {
+    "title": "brewery-wms API",
+    "version": "1.0-SNAPSHOT"
   },
-  "paths" : {
-    "/beer-styles" : {
-      "get" : {
-        "tags" : [ "Beer Style Resource" ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BeerStyleDto"
+  "paths": {
+    "/beer-styles": {
+      "get": {
+        "tags": [
+          "Beer Style Resource"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BeerStyleDto"
                   }
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/beer-styles/{id}" : {
-      "get" : {
-        "tags" : [ "Beer Style Resource" ],
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "format" : "int64",
-            "type" : "integer"
+    "/beer-styles/{id}": {
+      "get": {
+        "tags": [
+          "Beer Style Resource"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BeerStyleDto"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BeerStyleDto"
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/beer-styles/{id}/beers" : {
-      "get" : {
-        "tags" : [ "Beer Style Resource" ],
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "format" : "int64",
-            "type" : "integer"
+    "/beer-styles/{id}/beers": {
+      "get": {
+        "tags": [
+          "Beer Style Resource"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BeerResponse"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BeerResponse"
                   }
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/beers" : {
-      "get" : {
-        "tags" : [ "Beer Resource" ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BeerResponse"
+    "/beers": {
+      "get": {
+        "tags": [
+          "Beer Resource"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BeerResponse"
                   }
                 }
               }
@@ -126,24 +144,26 @@
           }
         }
       },
-      "post" : {
-        "tags" : [ "Beer Resource" ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/CreateBeerRequest"
+      "post": {
+        "tags": [
+          "Beer Resource"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBeerRequest"
               }
             }
           }
         },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BeerResponse"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BeerResponse"
                 }
               }
             }
@@ -151,444 +171,408 @@
         }
       }
     },
-    "/beers/{id}" : {
-      "get" : {
-        "tags" : [ "Beer Resource" ],
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+    "/beers/{id}": {
+      "get": {
+        "tags": [
+          "Beer Resource"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BeerResponse"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BeerResponse"
                 }
               }
             }
           }
         }
       },
-      "delete" : {
-        "tags" : [ "Beer Resource" ],
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+      "delete": {
+        "tags": [
+          "Beer Resource"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
     },
-    "/breweries" : {
-      "get" : {
-        "tags" : [ "Brewery Resource" ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BreweryResponse"
+    "/breweries": {
+      "get": {
+        "tags": [
+          "Brewery Resource"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BreweryResponse"
                   }
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       },
-      "post" : {
-        "tags" : [ "Brewery Resource" ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/BreweryCreateRequest"
+      "post": {
+        "tags": [
+          "Brewery Resource"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BreweryCreateRequest"
               }
             }
           }
         },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BreweryResponse"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BreweryResponse"
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/breweries/{breweryId}" : {
-      "get" : {
-        "tags" : [ "Brewery Resource" ],
-        "parameters" : [ {
-          "name" : "breweryId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+    "/breweries/{breweryId}": {
+      "get": {
+        "tags": [
+          "Brewery Resource"
+        ],
+        "parameters": [
+          {
+            "name": "breweryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BreweryDetailedResponse"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BreweryDetailedResponse"
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       },
-      "put" : {
-        "tags" : [ "Brewery Resource" ],
-        "parameters" : [ {
-          "name" : "breweryId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+      "put": {
+        "tags": [
+          "Brewery Resource"
+        ],
+        "parameters": [
+          {
+            "name": "breweryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/BreweryEditRequest"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BreweryEditRequest"
               }
             }
           }
         },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BreweryResponse"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BreweryResponse"
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/breweries/{breweryId}/beers" : {
-      "get" : {
-        "tags" : [ "Brewery Resource" ],
-        "parameters" : [ {
-          "name" : "breweryId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+    "/breweries/{breweryId}/beers": {
+      "get": {
+        "tags": [
+          "Brewery Resource"
+        ],
+        "parameters": [
+          {
+            "name": "breweryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BeerResponse"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BeerResponse"
                   }
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/breweries/{breweryId}/beers/{beerId}" : {
-      "post" : {
-        "tags" : [ "Brewery Resource" ],
-        "parameters" : [ {
-          "name" : "beerId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+    "/breweries/{breweryId}/beers/{beerId}": {
+      "post": {
+        "tags": [
+          "Brewery Resource"
+        ],
+        "parameters": [
+          {
+            "name": "beerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "breweryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        }, {
-          "name" : "breweryId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BeerResponse"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BeerResponse"
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       },
-      "delete" : {
-        "tags" : [ "Brewery Resource" ],
-        "parameters" : [ {
-          "name" : "beerId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
-          }
-        }, {
-          "name" : "breweryId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK"
+      "delete": {
+        "tags": [
+          "Brewery Resource"
+        ],
+        "parameters": [
+          {
+            "name": "beerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          {
+            "name": "breweryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "401": {
+            "description": "Not Authorized"
+          },
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/breweries/{breweryId}/images" : {
-      "post" : {
-        "tags" : [ "Brewery Resource" ],
-        "parameters" : [ {
-          "name" : "breweryId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+    "/breweries/{breweryId}/images": {
+      "post": {
+        "tags": [
+          "Brewery Resource"
+        ],
+        "parameters": [
+          {
+            "name": "breweryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "requestBody" : {
-          "content" : {
-            "multipart/form-data" : {
-              "schema" : {
-                "type" : "array",
-                "items" : {
-                  "$ref" : "#/components/schemas/Image"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Image"
                 }
               }
             }
           }
         },
-        "responses" : {
-          "200" : {
-            "description" : "OK"
+        "responses": {
+          "200": {
+            "description": "OK"
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/managers/login" : {
-      "post" : {
-        "tags" : [ "Brewery Manager Resource" ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/ManagerLoginRequest"
+    "/managers/login": {
+      "post": {
+        "tags": [
+          "Brewery Manager Resource"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerLoginRequest"
               }
             }
           }
         },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/JwtTokenResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/managers/register" : {
-      "post" : {
-        "tags" : [ "Brewery Manager Resource" ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/ManagerRegistrationRequest"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BreweryManagerCreateResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/managers/{managerId}" : {
-      "get" : {
-        "tags" : [ "Brewery Manager Resource" ],
-        "parameters" : [ {
-          "name" : "managerId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BreweryManagerResponse"
-                }
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authorized"
-          },
-          "403" : {
-            "description" : "Not Allowed"
-          }
-        },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
-      },
-      "put" : {
-        "tags" : [ "Brewery Manager Resource" ],
-        "parameters" : [ {
-          "name" : "managerId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
-          }
-        } ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/ManagerEditRequest"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BreweryManagerResponse"
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JwtTokenResponse"
                 }
               }
             }
@@ -596,620 +580,771 @@
         }
       }
     },
-    "/managers/{managerId}/managed-breweries" : {
-      "get" : {
-        "tags" : [ "Brewery Manager Resource" ],
-        "parameters" : [ {
-          "name" : "managerId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+    "/managers/register": {
+      "post": {
+        "tags": [
+          "Brewery Manager Resource"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerRegistrationRequest"
+              }
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BreweryResponse"
-                  }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BreweryManagerCreateResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/managers/{managerId}": {
+      "get": {
+        "tags": [
+          "Brewery Manager Resource"
+        ],
+        "parameters": [
+          {
+            "name": "managerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BreweryManagerResponse"
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       },
-      "delete" : {
-        "tags" : [ "Brewery Manager Resource" ],
-        "parameters" : [ {
-          "name" : "managerId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+      "put": {
+        "tags": [
+          "Brewery Manager Resource"
+        ],
+        "parameters": [
+          {
+            "name": "managerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK"
-          },
-          "401" : {
-            "description" : "Not Authorized"
-          },
-          "403" : {
-            "description" : "Not Allowed"
-          }
-        },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
-      }
-    },
-    "/managers/{managerId}/managed-breweries/{breweryId}" : {
-      "delete" : {
-        "tags" : [ "Brewery Manager Resource" ],
-        "parameters" : [ {
-          "name" : "breweryId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
-          }
-        }, {
-          "name" : "managerId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK"
-          },
-          "401" : {
-            "description" : "Not Authorized"
-          },
-          "403" : {
-            "description" : "Not Allowed"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ManagerEditRequest"
+              }
+            }
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BreweryManagerResponse"
+                }
+              }
+            }
+          }
+        }
       }
     },
-    "/stock/batches" : {
-      "get" : {
-        "tags" : [ "Brewery Production Batch Resource" ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BreweryProductionBatch"
+    "/managers/{managerId}/managed-breweries": {
+      "get": {
+        "tags": [
+          "Brewery Manager Resource"
+        ],
+        "parameters": [
+          {
+            "name": "managerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BreweryResponse"
                   }
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
-      }
-    },
-    "/stock/batches/{id}" : {
-      "get" : {
-        "tags" : [ "Brewery Production Batch Resource" ],
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+        "security": [
+          {
+            "SecurityScheme": []
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BreweryProductionBatch"
-                }
-              }
-            }
-          },
-          "401" : {
-            "description" : "Not Authorized"
-          },
-          "403" : {
-            "description" : "Not Allowed"
-          }
-        },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        ]
       },
-      "delete" : {
-        "tags" : [ "Brewery Production Batch Resource" ],
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+      "delete": {
+        "tags": [
+          "Brewery Manager Resource"
+        ],
+        "parameters": [
+          {
+            "name": "managerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "responses" : {
-          "204" : {
-            "description" : "No Content"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/stock/beers/{beerId}/batches" : {
-      "get" : {
-        "tags" : [ "Brewery Production Batch Resource" ],
-        "parameters" : [ {
-          "name" : "beerId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+    "/managers/{managerId}/managed-breweries/{breweryId}": {
+      "delete": {
+        "tags": [
+          "Brewery Manager Resource"
+        ],
+        "parameters": [
+          {
+            "name": "breweryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          },
+          {
+            "name": "managerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BreweryProductionBatch"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "403": {
+            "description": "Not Allowed"
+          }
+        },
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
+      }
+    },
+    "/stock/batches": {
+      "get": {
+        "tags": [
+          "Brewery Production Batch Resource"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BreweryProductionBatch"
                   }
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     },
-    "/stock/breweries/{breweryId}/batches" : {
-      "get" : {
-        "tags" : [ "Brewery Production Batch Resource" ],
-        "parameters" : [ {
-          "name" : "breweryId",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "$ref" : "#/components/schemas/UUID"
+    "/stock/batches/{id}": {
+      "get": {
+        "tags": [
+          "Brewery Production Batch Resource"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "OK",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/BreweryProductionBatch"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BreweryProductionBatch"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "403": {
+            "description": "Not Allowed"
+          }
+        },
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Brewery Production Batch Resource"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "403": {
+            "description": "Not Allowed"
+          }
+        },
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
+      }
+    },
+    "/stock/beers/{beerId}/batches": {
+      "get": {
+        "tags": [
+          "Brewery Production Batch Resource"
+        ],
+        "parameters": [
+          {
+            "name": "beerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BreweryProductionBatch"
                   }
                 }
               }
             }
           },
-          "401" : {
-            "description" : "Not Authorized"
+          "401": {
+            "description": "Not Authorized"
           },
-          "403" : {
-            "description" : "Not Allowed"
+          "403": {
+            "description": "Not Allowed"
           }
         },
-        "security" : [ {
-          "SecurityScheme" : [ ]
-        } ]
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
+      }
+    },
+    "/stock/breweries/{breweryId}/batches": {
+      "get": {
+        "tags": [
+          "Brewery Production Batch Resource"
+        ],
+        "parameters": [
+          {
+            "name": "breweryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/UUID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BreweryProductionBatch"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "403": {
+            "description": "Not Allowed"
+          }
+        },
+        "security": [
+          {
+            "SecurityScheme": []
+          }
+        ]
       }
     }
   },
-  "components" : {
-    "schemas" : {
-      "BeerResponse" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "$ref" : "#/components/schemas/UUID"
+  "components": {
+    "schemas": {
+      "BeerResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           },
-          "beerStyleName" : {
-            "type" : "string"
+          "beerStyleName": {
+            "type": "string"
           },
-          "beerStyleId" : {
-            "format" : "int64",
-            "type" : "integer"
+          "beerStyleId": {
+            "format": "int64",
+            "type": "integer"
           },
-          "ibu" : {
-            "format" : "double",
-            "type" : "number"
+          "ibu": {
+            "format": "double",
+            "type": "number"
           },
-          "bottleCapacity" : {
-            "format" : "double",
-            "type" : "number"
+          "bottleCapacity": {
+            "format": "double",
+            "type": "number"
           },
-          "alcoholPercentage" : {
-            "format" : "double",
-            "type" : "number"
+          "alcoholPercentage": {
+            "format": "double",
+            "type": "number"
           },
-          "color" : {
-            "type" : "string"
+          "color": {
+            "type": "string"
           },
-          "description" : {
-            "type" : "string"
+          "description": {
+            "type": "string"
           },
-          "price" : {
-            "format" : "double",
-            "type" : "number"
+          "price": {
+            "format": "double",
+            "type": "number"
           }
         }
       },
-      "BeerStyleDto" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "format" : "int64",
-            "type" : "integer"
+      "BeerStyleDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "format": "int64",
+            "type": "integer"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           }
         }
       },
-      "BeerUDT" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "$ref" : "#/components/schemas/UUID"
+      "BeerUDT": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           },
-          "style" : {
-            "type" : "string"
+          "style": {
+            "type": "string"
           }
         }
       },
-      "BreweryCreateRequest" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
+      "BreweryCreateRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           },
-          "city" : {
-            "type" : "string"
+          "city": {
+            "type": "string"
           },
-          "postalCode" : {
-            "type" : "string"
+          "postalCode": {
+            "type": "string"
           },
-          "surfaceArea" : {
-            "format" : "int32",
-            "type" : "integer"
+          "surfaceArea": {
+            "format": "int32",
+            "type": "integer"
           },
-          "internalCode" : {
-            "type" : "string"
+          "internalCode": {
+            "type": "string"
           },
-          "producedBeers" : {
-            "type" : "array",
-            "items" : {
-              "format" : "uuid",
-              "pattern" : "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
-              "type" : "string"
+          "producedBeers": {
+            "type": "array",
+            "items": {
+              "format": "uuid",
+              "pattern": "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
+              "type": "string"
             }
           }
         }
       },
-      "BreweryDetailedResponse" : {
-        "type" : "object",
-        "properties" : {
-          "brewery" : {
-            "$ref" : "#/components/schemas/BreweryResponse"
+      "BreweryDetailedResponse": {
+        "type": "object",
+        "properties": {
+          "brewery": {
+            "$ref": "#/components/schemas/BreweryResponse"
           },
-          "producedBeers" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/BeerResponse"
+          "producedBeers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BeerResponse"
             }
           }
         }
       },
-      "BreweryEditRequest" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
+      "BreweryEditRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           },
-          "city" : {
-            "type" : "string"
+          "city": {
+            "type": "string"
           },
-          "postalCode" : {
-            "type" : "string"
+          "postalCode": {
+            "type": "string"
           },
-          "surfaceArea" : {
-            "format" : "int32",
-            "type" : "integer"
+          "surfaceArea": {
+            "format": "int32",
+            "type": "integer"
           }
         }
       },
-      "BreweryManagerCreateResponse" : {
-        "type" : "object",
-        "properties" : {
-          "manager" : {
-            "$ref" : "#/components/schemas/BreweryManagerResponse"
+      "BreweryManagerCreateResponse": {
+        "type": "object",
+        "properties": {
+          "manager": {
+            "$ref": "#/components/schemas/BreweryManagerResponse"
           },
-          "jwt" : {
-            "$ref" : "#/components/schemas/JwtTokenResponse"
+          "jwt": {
+            "$ref": "#/components/schemas/JwtTokenResponse"
           }
         }
       },
-      "BreweryManagerResponse" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "$ref" : "#/components/schemas/UUID"
+      "BreweryManagerResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           },
-          "login" : {
-            "type" : "string"
+          "login": {
+            "type": "string"
           },
-          "email" : {
-            "type" : "string"
+          "email": {
+            "type": "string"
           },
-          "phoneNumber" : {
-            "type" : "string"
+          "phoneNumber": {
+            "type": "string"
           },
-          "hireDate" : {
-            "$ref" : "#/components/schemas/Instant"
+          "hireDate": {
+            "$ref": "#/components/schemas/Instant"
           }
         }
       },
-      "BreweryProductionBatch" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "$ref" : "#/components/schemas/UUID"
+      "BreweryProductionBatch": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
           },
-          "beerId" : {
-            "$ref" : "#/components/schemas/UUID"
+          "beerId": {
+            "$ref": "#/components/schemas/UUID"
           },
-          "breweryId" : {
-            "$ref" : "#/components/schemas/UUID"
+          "breweryId": {
+            "$ref": "#/components/schemas/UUID"
           },
-          "beer" : {
-            "$ref" : "#/components/schemas/BeerUDT"
+          "beer": {
+            "$ref": "#/components/schemas/BeerUDT"
           },
-          "brewery" : {
-            "$ref" : "#/components/schemas/BreweryUDT"
+          "brewery": {
+            "$ref": "#/components/schemas/BreweryUDT"
           },
-          "totalLiters" : {
-            "format" : "int64",
-            "type" : "integer"
+          "totalLiters": {
+            "format": "int64",
+            "type": "integer"
           },
-          "productionBatchCode" : {
-            "type" : "string"
+          "productionBatchCode": {
+            "type": "string"
           },
-          "productionTimestamp" : {
-            "$ref" : "#/components/schemas/Instant"
+          "productionTimestamp": {
+            "$ref": "#/components/schemas/Instant"
           },
-          "expirationTimestamp" : {
-            "$ref" : "#/components/schemas/Instant"
+          "expirationTimestamp": {
+            "$ref": "#/components/schemas/Instant"
           }
         }
       },
-      "BreweryResponse" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "$ref" : "#/components/schemas/UUID"
+      "BreweryResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           },
-          "city" : {
-            "type" : "string"
+          "city": {
+            "type": "string"
           },
-          "postalCode" : {
-            "type" : "string"
+          "postalCode": {
+            "type": "string"
           },
-          "surfaceArea" : {
-            "format" : "int32",
-            "type" : "integer"
+          "surfaceArea": {
+            "format": "int32",
+            "type": "integer"
           }
         }
       },
-      "BreweryUDT" : {
-        "type" : "object",
-        "properties" : {
-          "id" : {
-            "$ref" : "#/components/schemas/UUID"
+      "BreweryUDT": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           },
-          "city" : {
-            "type" : "string"
+          "city": {
+            "type": "string"
           },
-          "internalCode" : {
-            "type" : "string"
+          "internalCode": {
+            "type": "string"
           }
         }
       },
-      "CreateBeerRequest" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
+      "CreateBeerRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           },
-          "beerStyleId" : {
-            "format" : "int64",
-            "type" : "integer"
+          "beerStyleId": {
+            "format": "int64",
+            "type": "integer"
           },
-          "ibu" : {
-            "format" : "double",
-            "type" : "number"
+          "ibu": {
+            "format": "double",
+            "type": "number"
           },
-          "bottleCapacity" : {
-            "format" : "double",
-            "type" : "number"
+          "bottleCapacity": {
+            "format": "double",
+            "type": "number"
           },
-          "alcoholPercentage" : {
-            "format" : "double",
-            "type" : "number"
+          "alcoholPercentage": {
+            "format": "double",
+            "type": "number"
           },
-          "color" : {
-            "type" : "string"
+          "color": {
+            "type": "string"
           },
-          "description" : {
-            "type" : "string"
+          "description": {
+            "type": "string"
           },
-          "price" : {
-            "format" : "double",
-            "type" : "number"
+          "price": {
+            "format": "double",
+            "type": "number"
           }
         }
       },
-      "FileUpload" : {
-        "type" : "object"
+      "FileUpload": {
+        "type": "object"
       },
-      "Image" : {
-        "type" : "object",
-        "properties" : {
-          "fileUpload" : {
-            "$ref" : "#/components/schemas/FileUpload"
+      "Image": {
+        "type": "object",
+        "properties": {
+          "fileUpload": {
+            "$ref": "#/components/schemas/FileUpload"
           }
         }
       },
-      "Instant" : {
-        "format" : "date-time",
-        "type" : "string",
-        "example" : "2022-03-10T16:15:50Z"
+      "Instant": {
+        "format": "date-time",
+        "type": "string",
+        "example": "2022-03-10T16:15:50Z"
       },
-      "JwtTokenResponse" : {
-        "type" : "object",
-        "properties" : {
-          "jwt" : {
-            "type" : "string"
+      "JwtTokenResponse": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string"
           }
         }
       },
-      "ManagerEditRequest" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
+      "ManagerEditRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           },
-          "login" : {
-            "type" : "string"
+          "login": {
+            "type": "string"
           },
-          "email" : {
-            "type" : "string"
+          "email": {
+            "type": "string"
           },
-          "phoneNumber" : {
-            "type" : "string"
+          "phoneNumber": {
+            "type": "string"
           },
-          "hireDate" : {
-            "$ref" : "#/components/schemas/Instant"
+          "hireDate": {
+            "$ref": "#/components/schemas/Instant"
           }
         }
       },
-      "ManagerLoginRequest" : {
-        "type" : "object",
-        "properties" : {
-          "login" : {
-            "type" : "string"
+      "ManagerLoginRequest": {
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string"
           },
-          "password" : {
-            "type" : "string"
+          "password": {
+            "type": "string"
           }
         }
       },
-      "ManagerRegistrationRequest" : {
-        "type" : "object",
-        "properties" : {
-          "name" : {
-            "type" : "string"
+      "ManagerRegistrationRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           },
-          "login" : {
-            "type" : "string"
+          "login": {
+            "type": "string"
           },
-          "password" : {
-            "type" : "string"
+          "password": {
+            "type": "string"
           },
-          "email" : {
-            "type" : "string"
+          "email": {
+            "type": "string"
           },
-          "phoneNumber" : {
-            "type" : "string"
+          "phoneNumber": {
+            "type": "string"
           }
         }
       },
-      "UUID" : {
-        "format" : "uuid",
-        "pattern" : "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
-        "type" : "string"
+      "UUID": {
+        "format": "uuid",
+        "pattern": "[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}",
+        "type": "string"
       }
     },
-    "securitySchemes" : {
-      "SecurityScheme" : {
-        "type" : "http",
-        "description" : "Authentication",
-        "scheme" : "bearer",
-        "bearerFormat" : "JWT"
+    "securitySchemes": {
+      "SecurityScheme": {
+        "type": "http",
+        "description": "Authentication",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }

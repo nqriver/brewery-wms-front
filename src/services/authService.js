@@ -25,4 +25,4 @@ const register = async (registerData) => {
     }
 };
 
-export { login, register };
+export {login, register};

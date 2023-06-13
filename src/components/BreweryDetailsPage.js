@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useBreweryDetails } from '../services/breweryService';
-import { Spinner, Table, Alert } from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
+import {useBreweryDetails} from '../services/breweryService';
+import {Alert, Spinner, Table} from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

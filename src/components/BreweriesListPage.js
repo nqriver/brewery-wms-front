@@ -1,7 +1,7 @@
 import React from 'react';
 import {FaBuilding, FaCity, FaMailBulk, FaRulerCombined} from 'react-icons/fa';
 import {LinkContainer} from 'react-router-bootstrap';
-import {Spinner, Container, Card, Button} from 'react-bootstrap';
+import {Button, Card, Container, Spinner} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useBreweries} from "../services/breweryService";
 

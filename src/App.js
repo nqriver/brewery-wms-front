@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import React, {useCallback, useEffect, useState} from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import LoginPage from "./components/LoginPage";
 import BreweriesListPage from "./components/BreweriesListPage";
 import BreweryDetailsPage from "./components/BreweryDetailsPage";
@@ -61,12 +61,14 @@ function App() {
                 <Route path="/breweries/:breweryId" element={<BreweryDetailsWithNavbarPage/>}/>
                 <Route path="/breweries/:id/management" element={<BreweryManagementWithNavbarPage/>}/>
                 <Route path="/users" element={<ManagerWithNavbarPage/>}/>
-                <Route path="/breweries/:breweryId/production-batches" element={<BreweryProductionBatchesWithNavbarPage/>}/>
+                <Route path="/breweries/:breweryId/production-batches"
+                       element={<BreweryProductionBatchesWithNavbarPage/>}/>
                 <Route path="/" element={isLoggedIn ? <BreweriesPage/> : <HomePage/>}/>
             </Routes>
         </Router>
     );
 }
+
 function BreweriesPage() {
     return (
         <>

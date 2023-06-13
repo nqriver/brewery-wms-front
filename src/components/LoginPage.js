@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { login } from '../services/authService';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {login} from '../services/authService';
+import {useNavigate} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LoginPage = () => {
@@ -40,11 +40,13 @@ const LoginPage = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label>Login</label>
-                                    <input type="text" name="login" className="form-control" onChange={handleChange} required />
+                                    <input type="text" name="login" className="form-control" onChange={handleChange}
+                                           required/>
                                 </div>
                                 <div className="form-group">
                                     <label>Password</label>
-                                    <input type="password" name="password" className="form-control" onChange={handleChange} required />
+                                    <input type="password" name="password" className="form-control"
+                                           onChange={handleChange} required/>
                                 </div>
                                 <div className="form-group">
                                     <button className="btn btn-primary btn-block" type="submit">Login</button>

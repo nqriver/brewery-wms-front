@@ -1,15 +1,14 @@
 // ManagerPage.js
-import React, {useState, useEffect} from 'react';
-import {Button, Form, Card, ListGroup, Container, Row, Col, Alert, Modal} from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import {Alert, Button, Card, Container, Form, ListGroup, Modal, Row} from 'react-bootstrap';
 import moment from 'moment'; // Importuj bibliotekę moment.js
-
 import '../index.css';
 import {
-    getManager,
-    updateManager,
-    getManagedBreweries,
     deleteAllManagedBreweries,
-    deleteSelectedManagedBrewery
+    deleteSelectedManagedBrewery,
+    getManagedBreweries,
+    getManager,
+    updateManager
 } from '../services/loggedInManagerService';
 import jwtDecode from "jwt-decode";
 

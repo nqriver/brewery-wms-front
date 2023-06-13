@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {Container, Button, Modal, Form, Card, Col} from 'react-bootstrap';
-import {getAllBeers, createBeer, deleteBeer} from '../services/beerService';
+import React, {useEffect, useState} from 'react';
+import {Button, Card, Container, Form, Modal} from 'react-bootstrap';
+import {createBeer, deleteBeer, getAllBeers} from '../services/beerService';
 import {getBeerStyles} from '../services/beerStyleService';
 
 const BeersPage = () => {
@@ -54,7 +54,7 @@ const BeersPage = () => {
 
     return (
         <Container className="mt-4">
-                <h1 className="mb-4 text-center">Oferta piw</h1>
+            <h1 className="mb-4 text-center">Oferta piw</h1>
 
             <Button variant="primary" onClick={handleShow}>Dodaj piwo</Button>
 

@@ -9,8 +9,8 @@ const BreweryProductionBatchPage = () => {
     const [productionBatches, setProductionBatches] = useState([]);
     const [showDetails, setShowDetails] = useState(false);
     const [currentBatchDetails, setCurrentBatchDetails] = useState({});
-    const { getBreweryProductionBatches, loading } = useBreweryProductionBatches();
-    const { breweryId } = useParams();
+    const {getBreweryProductionBatches, loading} = useBreweryProductionBatches();
+    const {breweryId} = useParams();
     const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {

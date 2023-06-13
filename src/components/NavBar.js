@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link, useNavigate} from 'react-router-dom';
-import {Navbar, Nav, Container} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import {Container, Nav, Navbar} from 'react-bootstrap';
 import jwtDecode from 'jwt-decode';
 import {GiBeerBottle} from 'react-icons/gi';
 import {FaUser} from 'react-icons/fa';
@@ -35,7 +35,7 @@ const NavBar = () => {
                     {jwt && (
                         <Navbar.Text className="justify-content-end">
                             <Nav.Link as={Link} to="/logout">Wyloguj się
-                            <FiLogOut/>
+                                <FiLogOut/>
                             </Nav.Link>
                         </Navbar.Text>
                     )}

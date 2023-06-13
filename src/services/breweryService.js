@@ -1,6 +1,6 @@
 // ./services/breweryService.js
 import api from './api';
-import {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 const useBreweries = () => {
     const [breweries, setBreweries] = useState([]);

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Container, ListGroup, Button, Modal, Card } from "react-bootstrap";
-import { getBeerStyles, getBeersByStyleId } from "../services/beerStyleService";
+import React, {useEffect, useState} from "react";
+import {Button, Card, Container, ListGroup, Modal} from "react-bootstrap";
+import {getBeersByStyleId, getBeerStyles} from "../services/beerStyleService";
 
 const BeerStylesPage = () => {
     const [beerStyles, setBeerStyles] = useState([]);
