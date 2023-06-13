@@ -1,26 +1,27 @@
 import api from './api';
 
-
 const login = async (loginData) => {
     try {
         const response = await api.post('/managers/login', loginData);
         localStorage.setItem('jwt', response.data.jwt);
-        return true; // zwróć prawdę, jeśli zalogowanie się powiodło
     } catch (error) {
         console.error('Error during login', error);
-        return false; // zwróć fałsz, jeśli wystąpił błąd
+        throw error;
     }
 };
 
-// reszta kodu jest bez zmian
+export const logout = () => {
+    localStorage.removeItem('jwt');
+};
 
 const register = async (registerData) => {
     try {
         const response = await api.post('/managers/register', registerData);
-        // Po rejestracji możesz zalogować użytkownika lub przekierować go do strony logowania
+        localStorage.setItem('jwt', response.data.jwt.jwt);
+        return response.data;
     } catch (error) {
         console.error('Error during registration', error);
-        // Obsługa błędów rejestracji
+        throw error;
     }
 };
 
